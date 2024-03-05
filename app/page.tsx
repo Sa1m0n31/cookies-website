@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "./_components/Hero";
 import SiteHeader from "./_components/SiteHeader";
 import BoxSection from "./_components/BoxSection";
@@ -17,7 +15,7 @@ export default function Home() {
     <Image className="background background--2" src="/bg-2.svg" width={2000} height={1500} alt="background" />
 
     <Modal />
-    
+
     <SiteHeader />
     <Hero />
     <BoxSection />

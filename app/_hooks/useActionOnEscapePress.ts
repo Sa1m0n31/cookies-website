@@ -7,7 +7,7 @@ const useActionOnEscapePress = (action: Function) => {
                 action();
             }
         });
-    }, []);
+    }, [action]);
 }
 
 export default useActionOnEscapePress;

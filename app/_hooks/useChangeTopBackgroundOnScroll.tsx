@@ -27,5 +27,5 @@ export default function useChangeTopBackgroundOnScroll(refElement) {
     } else if (scrollDirection === 'up') {
       refElement.current.style.backgroundColor = 'transparent';
     }
-  }, [scrollDirection]);
+  }, [refElement, scrollDirection]);
 }
