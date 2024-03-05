@@ -1,6 +1,5 @@
 "use client";
 
-import './globals.css'
 import Hero from "./_components/Hero";
 import SiteHeader from "./_components/SiteHeader";
 import BoxSection from "./_components/BoxSection";
@@ -20,8 +19,7 @@ export default function Home() {
     <Hero />
     <BoxSection />
     <VideoSection />
-    
-    <Plans />
+    <Plans homepage={true} />
     <Testimonial />
     <FAQ />
     <Footer />

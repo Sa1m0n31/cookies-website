@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export default function Testimonial() {
-  return <div className="w-screen relative">
+  return <div className="w-full xl:w-screen relative">
     <Image className="background background--5" src="/bg-5.svg" width={2000} height={2000} alt="background" />
 
     <section className="w-11/12 max-w-[1088px] mx-auto my-36 mb-20 lg:my-36 flex flex-col lg:flex-row justify-between items-center gap-12">

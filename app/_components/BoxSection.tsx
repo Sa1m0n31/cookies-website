@@ -4,13 +4,13 @@ export default function BoxSection() {
       <span className="sectionHeader__before block text-center lg:text-left text-[#7B6969] w-full uppercase">
         Superior Benefits
       </span>
-      <h2 className="font-extrabold text-3xl lg:text-6xl mt-4 text-center lg:text-left w-full">
+      <h2 className="font-extrabold text-3xl lg:text-4xl 2xl:text-6xl mt-4 text-center lg:text-left w-full">
         Unlocking Efficiency and Security
       </h2>
     </header>
 
     <div className="flex flex-col lg:flex-row gap-5 mb-5 justify-between items-center">
-      <div className="box--1 w-full max-w-[500px] lg:max-w-[424px] h-[400px] relative p-8 pb-52 bg-[#FBFBFB] rounded-3xl">
+      <div className="box--1 w-full max-w-[500px] lg:max-w-[424px] h-[400px] relative p-8 bg-[#FBFBFB] rounded-3xl">
         <h3 className="text-2xl font-bold pb-2 max-w-[346px]">
           Automated Compliance Updates
         </h3>
@@ -19,7 +19,7 @@ export default function BoxSection() {
         </p>
       </div>
 
-      <div className="box--2 w-full max-w-[500px] h-[400px] lg:max-w-[538px] relative p-8 pb-56 bg-black rounded-3xl">
+      <div className="box--2 overflow-hidden w-full max-w-[500px] h-[400px] lg:max-w-[538px] relative p-8 bg-black rounded-3xl">
         <h3 className="text-2xl font-bold pb-2 text-white">
           Customizable Consent Banners
         </h3>
@@ -28,7 +28,7 @@ export default function BoxSection() {
         </p>
       </div>
 
-      <div className="box--3 w-full max-w-[500px] h-[400px] lg:max-w-[314px] relative p-8 pb-52 bg-[#FBFBFB] rounded-3xl">
+      <div className="box--3 w-full max-w-[500px] h-[400px] lg:max-w-[314px] relative p-8 bg-[#FBFBFB] rounded-3xl">
         <h3 className="text-2xl font-bold pb-2 max-w-[222px]">
           User Consent Logging
         </h3>
@@ -39,7 +39,7 @@ export default function BoxSection() {
     </div>
 
     <div className="flex flex-col lg:flex-row gap-5 justify-between items-center">
-      <div className="box--4 h-[210px] relative px-8 py-12 lg:pr-96 bg-[#FBFBFB] rounded-3xl w-full max-w-[500px] lg:max-w-[1200px]">
+      <div className="box--4 min-h-[210px] relative px-8 py-12 xl:pr-96 bg-[#FBFBFB] rounded-3xl w-full max-w-[500px] lg:max-w-[1200px]">
         <h3 className="text-2xl font-bold pb-2">
           Real-time Cookie Scanning
         </h3>
@@ -48,8 +48,8 @@ export default function BoxSection() {
         </p>
       </div>
 
-      <div className="box--5 h-[210px] relative px-8 lg:px-3 py-8 lg:pl-52 bg-black lg:bg-[#FBFBFB] rounded-3xl w-full max-w-[500px] lg:max-w-[1200px]">
-        <h3 className="text-white lg:text-black text-2xl font-bold pb-2 max-w-[310px] ">
+      <div className="box--5 min-h-[210px] relative px-8 xl:px-3 py-8 xl:pl-52 bg-black rounded-3xl w-full max-w-[500px] lg:max-w-[1200px] flex flex-col items-left justify-center">
+        <h3 className="text-white text-2xl font-bold pb-2 max-w-[310px] w-full">
           User Experience Optimization
         </h3>
         <p className="text-[#7B7B7B]">

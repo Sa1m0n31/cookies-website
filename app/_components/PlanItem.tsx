@@ -17,7 +17,7 @@ interface PlanItemProps {
   subtitle: string,
   price: string,
   points: string[],
-  link,
+  link: string,
   theme: ThemeObject
 }
 
@@ -59,8 +59,9 @@ export default function PlanItem({index, title, subtitle, price, points, link, t
         background: theme.button,
         color: theme.textButton
       }}
-      className={`btn flex gap-3 justify-center items-center w-full h-[52px] rounded-full`}>
+      className={`btn flex gap-3 justify-center items-center w-full h-[52px] rounded-full font-bold`}>
       Get started
+      
       <Image src={theme.buttonIcon}
         width={20}
         height={20}
