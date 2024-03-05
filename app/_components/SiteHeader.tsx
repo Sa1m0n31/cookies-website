@@ -11,7 +11,7 @@ export default function SiteHeader() {
   useChangeTopBackgroundOnScroll(siteHeaderElement);
   
   return <header ref={siteHeaderElement} 
-           className="w-full flex justify-center align-center bg-transparent fixed mx-auto py-6 mb-28 top-0 z-50 transition-all duration-500">
+           className="w-full flex justify-center align-center bg-transparent fixed mx-auto py-6 mb-28 top-0 z-40 transition-all duration-500">
     <div className="flex justify-start md:justify-between items-center w-11/12 lg:w-[896px]">
       <button className="mobileMenuBtn overflow-visible relative block md:hidden transparent w-6 h-6 mr-9">
         <Image src="/menu.svg"

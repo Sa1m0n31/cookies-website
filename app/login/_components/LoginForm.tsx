@@ -1,15 +1,56 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Input from './Input.tsx';
 import Image from 'next/image';
 
 export default function LoginForm() {
+  const errorRef = useRef(null);
+  
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState('');
 
-  const handleSubmit = () => {
-    
+  useEffect(() => {
+    if(errorRef?.current) {
+      if(error) {
+        errorRef.current.style.opacity = '1';
+        errorRef.current.style.transform = 'translate(-50%, 0)';
+
+        setTimeout(() => {
+          setError('');
+        }, 3000);
+      }
+      else {
+        errorRef.current.style.opacity = '0';
+        errorRef.current.style.transform = 'translate(-50%, 1rem)';
+      }
+    }
+  }, [error, errorRef]);
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!email) {
+      setError('Fill email field');
+    }
+    else if(!validateEmail(email)) {
+      setError('Type proper email address');
+    }
+    else if(!password) {
+      setError('Fill password field');
+    }
+    else {
+      // Submit form
+    }
   }
   
   return <form className="login__form w-full p-8 lg:p-12 my-8 flex flex-col justify-end items-end">
@@ -34,5 +75,10 @@ export default function LoginForm() {
         alt="get-started"
       />
     </button>
+
+    <p ref={errorRef} 
+      className="bg-[#E50013] text-white py-3 px-4 lg:px-6 text-center font-bold fixed left-1/2 bottom-10 -translate-x-1/2 translate-y-4 opacity-0 transition-all duration-300 z-40 rounded-2xl text-sm lg:text-normal">
+      {error}
+    </p>
   </form>
 }

@@ -4,7 +4,9 @@ import Image from 'next/image'
 export default function HeroForm() {
   const [websiteName, setWebsiteName] = useState<string>('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
     if(websiteName) {
       window.location.href = '/login';
     }
@@ -17,7 +19,8 @@ export default function HeroForm() {
              onChange={(e) => { setWebsiteName(e.target.value); }} 
              placeholder="Your website..." />
     </label>
-    <button className="btn flex justify-center items-center gap-3 w-full lg:w-1/3 max-w-[700px] h-12 lg:h-14 background-primary text-white rounded-full lg:rounded-l-xl lg:rounded-r-[32px] py-3 px-8 text-lg font-bold">
+    <button onClick={handleSubmit} 
+      className="btn flex justify-center items-center gap-3 w-full lg:w-1/3 max-w-[700px] h-12 lg:h-14 background-primary text-white rounded-full lg:rounded-l-xl lg:rounded-r-[32px] py-3 px-8 text-lg font-bold">
       Get started
       
       <Image src="/button-arrow.svg" 

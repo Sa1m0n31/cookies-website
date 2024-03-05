@@ -98,19 +98,6 @@ a {
   height: 16px;
 }
 
-/* .hero::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 120%;
-  height: 80px;
-  bottom: -64px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(255, 255, 255, 0) 0.01%, #FFFFFF 100%);
-} */
-
 .sectionHeader__before {
   letter-spacing: 0.21em;
 }
@@ -125,14 +112,30 @@ a {
   height: 218px;
 }
 
+.box--2__text::before,
+.box--2::before,
 .box--2::after {
   content: "";
-  background: url("/shape-2.svg") 100% no-repeat;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 230px;
+  left: 16px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(0deg, #FEC9C9, #FEC9C9), linear-gradient(180deg, rgba(255, 101, 101, 0) 0%, rgba(255, 255, 255, 0) 0.01%, #FBEAED 99.99%, #FFFFFF 100%);
+  opacity: 0.25;
+}
+
+.box--2::before {
+  right: 16px;
+  left: unset;
+}
+
+.box--2__text::before {
+  left: -25%;
+  top: unset;
+  bottom: -30px;
+  width: 150%;
+  height: 1px;
 }
 
 .box--3::after {
@@ -304,17 +307,28 @@ a {
   max-height: calc(100vh - 400px);
 }
 
+.btnModalClose {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), linear-gradient(65.87deg, rgba(255, 255, 255, 0.76) 3.97%, #FFFFFF 96.81%);
+  box-shadow: 0px -136px 54px rgba(77, 0, 8, 0.01), 0px -76px 46px rgba(77, 0, 8, 0.03), 0px -34px 34px rgba(77, 0, 8, 0.04), 0px -8px 19px rgba(77, 0, 8, 0.05);
+  backdrop-filter: blur(14.8px);
+  border: 1px solid rgba(0, 0, 0, .02);
+}
+
+.modal__inner::after {
+  content: url("/modal-shape.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: auto;
+  zindex: 1;
+}
+
 @media(max-width: 1280px) {
-  .background {
-    display: none;
-  }
-
-  .box--2::after {
-    height: 160px;
-  }
-
+  .background,
+  .modal__inner::after,
   .box--4::after,
-  .box--5::after {
+  .box--5::after { 
     display: none;
   }
 }
@@ -326,5 +340,13 @@ a {
   
   .hero__header {
     font-size: 34px;
+  }
+
+  .box--2::before {
+    right: 8px;
+  }
+
+  .box--2::after {
+    left: 8px;
   }
 }

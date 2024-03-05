@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function BoxSection() {
   return <section className="w-11/12 xl:max-w-[1320px] mx-auto mt-24 bg-transparent relative z-20">
     <header className="mb-12">
@@ -23,9 +25,15 @@ export default function BoxSection() {
         <h3 className="text-2xl font-bold pb-2 text-white">
           Customizable Consent Banners
         </h3>
-        <p className="text-[#7B7B7B]">
+        <p className="box--2__text text-[#7B7B7B] relative">
           Tailor cookie banners to fit your brand. Customize design and messaging for seamless website integration.
         </p>
+
+        <Image className="w-full h-[215px] lg:h-auto -translate-x-1/2 bottom-0 left-1/2 absolute"
+          src="/shape-2.svg"
+          width={475}
+          height={280}
+          alt="background" />
       </div>
 
       <div className="box--3 w-full max-w-[500px] h-[400px] lg:max-w-[314px] relative p-8 bg-[#FBFBFB] rounded-3xl">
