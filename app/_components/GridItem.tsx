@@ -4,14 +4,12 @@ interface GridItemProps {
   icon: string,
   title: string,
   content: string,
-  extraClass: string,
-  index: number
+  extraClass: string
 }
 
-export default function GridItem({icon, title, content, extraClass, index}: GridItemProps) {
-  return <div className={`w-full p-8 ${extraClass}`} 
-           key={index}>
-    <Image className="h-7 w-auto" 
+export default function GridItem({icon, title, content, extraClass}: GridItemProps) {
+  return <div className={`w-full p-8 ${extraClass}`}>
+    <Image className="h-7 w-auto"
       src={icon}
       width={32}
       height={32}

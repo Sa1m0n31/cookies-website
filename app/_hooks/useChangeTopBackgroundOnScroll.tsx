@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-export default function useChangeTopBackgroundOnScroll(refElement: React.RefObject) {
+export default function useChangeTopBackgroundOnScroll(refElement) {
   const [scrollDirection, setScrollDirection] = useState(null);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;

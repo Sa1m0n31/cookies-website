@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
-import Input from './Input.tsx';
+import Input from './Input';
 import Image from 'next/image';
 
 export default function LoginForm() {
   const errorRef = useRef(null);
-  
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState('');
@@ -35,7 +35,7 @@ export default function LoginForm() {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   }
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -52,14 +52,14 @@ export default function LoginForm() {
       // Submit form
     }
   }
-  
+
   return <form className="login__form w-full p-8 lg:p-12 my-8 flex flex-col justify-end items-end">
-    <Input value={email} 
+    <Input value={email}
       setValue={(e) => { setEmail(e.target.value); }}
       placeholder='Email'
       type='email' />
 
-    <Input value={password} 
+    <Input value={password}
       setValue={(e) => { setPassword(e.target.value); }}
       placeholder='Password'
       type='password' />
@@ -76,7 +76,7 @@ export default function LoginForm() {
       />
     </button>
 
-    <p ref={errorRef} 
+    <p ref={errorRef}
       className="bg-[#E50013] text-white py-3 px-4 lg:px-6 text-center font-bold fixed left-1/2 bottom-10 -translate-x-1/2 translate-y-4 opacity-0 transition-all duration-300 z-40 rounded-2xl text-sm lg:text-normal">
       {error}
     </p>

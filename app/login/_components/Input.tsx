@@ -9,7 +9,7 @@ export default function Input({value, setValue, placeholder, type}: InputProps) 
   return <label className="w-full mb-4">
     <input className="input outline-0 border-[#ECEAEA] border p-4 w-full rounded-xl"
       value={value}
-      onChange={setValue}
+      onChange={(e) => { setValue(e.target.value); }}
       placeholder={placeholder}
       type={type} />
   </label>

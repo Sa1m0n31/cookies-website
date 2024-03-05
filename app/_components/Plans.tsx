@@ -1,6 +1,7 @@
+import React from 'react';
 import PlanItem from "./PlanItem";
 import Image from 'next/image';
-import { plans } from '../_static/content.ts';
+import { plans } from '../_static/content';
 
 interface PlansProps {
   homepage: boolean
@@ -8,12 +9,12 @@ interface PlansProps {
 
 export default function Plans({homepage}: PlansProps) {
   return <div className="w-full xl:w-screen relative">
-    {homepage ? <Image className="background background--4" 
-      src="/bg-4.svg" 
-      width={2000} 
-      height={2000} 
+    {homepage ? <Image className="background background--4"
+      src="/bg-4.svg"
+      width={2000}
+      height={2000}
       alt="background" /> : <span className="background background--8"></span>}
-  
+
     <div className={`bg-black max-w-[1088px] mx-auto lg:rounded-3xl pt-16 px-4 lg:px-0 mt-20 lg:mt-[150px] relative z-20 ${homepage ? '' : 'mb-48'}`}>
       <header className="flex flex-col justify-center items-center">
         <span className="sectionHeader__before text-xs lg:text-normal text-center text-[#DBD1D1] uppercase">
@@ -28,17 +29,16 @@ export default function Plans({homepage}: PlansProps) {
         {plans.map((item, index) => {
           const { title, subtitle, price, link, points, theme } = item;
 
-          return (
+          return <React.Fragment key={index}>
             <PlanItem
-              index={index}
-              title={title}
-              subtitle={subtitle}
-              price={price}
-              link={link}
-              points={points}
-              theme={theme}
+                title={title}
+                subtitle={subtitle}
+                price={price}
+                link={link}
+                points={points}
+                theme={theme}
             />
-          );
+          </React.Fragment>
         })}
       </div>
     </div>

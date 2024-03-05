@@ -1,4 +1,4 @@
-import { heroListItems } from '../_static/content.ts';
+import { heroListItems } from '../_static/content';
 
 export default function HeroChecklist() {
   return <ul className="flex gap-7 justify-between items-center pt-10 pb-6 mx-auto max-w-[90%]">

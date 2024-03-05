@@ -1,14 +1,14 @@
 import Image from 'next/image';
-import LoginForm from './_components/LoginForm.tsx';
-import RegisterHint from './_components/RegisterHint.tsx';
+import LoginForm from './_components/LoginForm';
+import RegisterHint from './_components/RegisterHint';
 
 export default function LoginPage() {
   return <div className="w-full h-screen min-h-[800px] flex flex-col lg:flex-row overflow-hidden">
     <div className="login__left pb-10 lg:pb-0 relative w-full lg:w-1/2 px-4 lg:pl-10 lg:pr-20 2xl:pr-[124px] flex justify-end items-start">
       <div className="w-full 2xl:w-[536px] relative z-20">
         <a href="/" className="flex gap-3 md:gap-5 justify-start align-center mt-8">
-          <Image src="/logo.svg" 
-            width={27} 
+          <Image src="/logo.svg"
+            width={27}
             height={27}
             alt="logo" />
 
@@ -21,7 +21,7 @@ export default function LoginPage() {
           <h1 className="font-extrabold text-2xl lg:text-5xl">
             Login
           </h1>
-          
+
           <LoginForm />
           <RegisterHint />
         </div>

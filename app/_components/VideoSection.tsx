@@ -1,15 +1,16 @@
+import React from 'react';
 import Image from "next/image";
 import GridItem from "./GridItem";
-import { videoSectionGrid } from '../_static/content.ts';
+import { videoSectionGrid } from '../_static/content';
 
 export default function VideoSection() {
   return <div className="w-full xl:w-screen relative">
-    <Image className="background background--3" 
-      src="/bg-3.svg" 
-      width={1221} 
-      height={1221} 
+    <Image className="background background--3"
+      src="/bg-3.svg"
+      width={1221}
+      height={1221}
       alt="background" />
-    
+
     <div className="w-11/12 xl:w-full max-w-[1320px] mx-auto my-20 lg:my-56 relative z-20">
       <header className="flex flex-col justify-center items-center">
         <span className="text-center sectionHeader__before block text-[#7B6969] uppercase">
@@ -27,7 +28,7 @@ export default function VideoSection() {
             What is Cookie Consent?
             <Image src="/arrow-right-red.svg" width={16} height={16} alt="arrow" />
           </a>
-          <a href=""
+          <a href="#faq"
              className="btn flex justify-center items-center py-2 px-4 bg-white gap-2 text-sm">
             FAQ
             <Image src="/arrow-down-red.svg" width={16} height={16} alt="arrow" />
@@ -47,11 +48,12 @@ export default function VideoSection() {
         {videoSectionGrid.map((item, index) => {
           const { icon, title, content } = item;
 
-          return <GridItem icon={icon}
-                   title={title}
-                   content={content}
-                   extraClass={'bg-white'}
-                   index={index} />
+          return <React.Fragment key={index}>
+            <GridItem icon={icon}
+                      title={title}
+                      content={content}
+                      extraClass={'bg-white'} />
+          </React.Fragment>
         })}
       </div>
 

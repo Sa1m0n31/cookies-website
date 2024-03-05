@@ -23,7 +23,7 @@ export default function FaqItem({index, question, answer, questionOpen, setQuest
     else {
       hideQuestion();
     }
-  }, [questionOpen]);
+  }, [index, questionOpen]);
 
   const showQuestion = () => {
     plusImage.current.style.visibility = 'hidden';
@@ -61,32 +61,32 @@ export default function FaqItem({index, question, answer, questionOpen, setQuest
       }
     });
   }
-  
+
   return <div ref={faqElement} className="w-full p-8 transparent transition-all duration-300 rounded-xl">
-    <button onClick={toggleQuestion} 
+    <button onClick={toggleQuestion}
       className="w-full flex justify-between items-center transparent">
       <h6 className="text-xl lg:text-2xl font-extrabold text-left">
         {question}
       </h6>
 
       <div className="w-6 h-6 min-w-6 min-h-6 relative shrink-0 ml-4">
-        <Image className="invisible absolute top-0 left-0 w-full min-w-6" 
-          ref={minusImage} 
-          src="/minus.svg" 
-          width={24} 
-          height={24} 
+        <Image className="invisible absolute top-0 left-0 w-full min-w-6"
+          ref={minusImage}
+          src="/minus.svg"
+          width={24}
+          height={24}
           alt="minus" />
-        <Image className="invisible absolute top-0 left-0 w-full min-w-6" 
-          ref={plusImage} 
-          src="/plus.svg" 
-          width={24} 
-          height={24} 
+        <Image className="invisible absolute top-0 left-0 w-full min-w-6"
+          ref={plusImage}
+          src="/plus.svg"
+          width={24}
+          height={24}
           alt="plus" />
       </div>
     </button>
 
     <div ref={questionElementWrapper} className="transition-all duration-300 h-0 overflow-hidden">
-      <p ref={questionElement} 
+      <p ref={questionElement}
         className="text-[#5B5B5B] w-full pt-4 text-lg font-medium leading-8 overflow-hidden origin-top-left transition-all duration-300 opacity-0">
         {answer}
       </p>
